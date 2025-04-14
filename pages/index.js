@@ -14,71 +14,74 @@ export default function Home() {
 
   const handleSelect = (index) => {
     setSelectedIndex(index);
+    if (navigator.vibrate) navigator.vibrate(10); // subtle tap
   };
 
   const handleNext = () => {
     setSelectedIndex(null);
     setCurrent((prev) => (prev + 1 < scenarios.length ? prev + 1 : prev));
+    if (navigator.vibrate) navigator.vibrate(5); // light nudge
   };
 
   const handleBack = () => {
     setSelectedIndex(null);
     setCurrent((prev) => (prev > 0 ? prev - 1 : prev));
+    if (navigator.vibrate) navigator.vibrate(5); // light nudge
   };
 
   return (
     isClient && (
-      <div className="min-h-screen bg-gray-100 flex flex-col items-center font-[Inter]">
-        {/* App Header */}
-        <header className="w-full bg-blue-100 border-b px-4 py-4 shadow-sm rounded-b-xl flex flex-col items-center gap-1">
+      <div className="min-h-screen bg-[#F0E5D8] flex flex-col items-center font-[Inter]">
+        {/* Header */}
+        <header className="w-full bg-[#4A90E2] px-4 py-4 shadow-sm flex flex-col items-center gap-1">
           <img src="/icon-180.png" alt="App Icon" className="w-10 h-10 mb-1" />
-          <h1 className="text-lg font-bold text-blue-900 tracking-tight">Convo Coach</h1>
+          <h1 className="text-lg font-bold text-white tracking-tight">Convo Coach</h1>
         </header>
 
-        {/* Main Container */}
+        {/* Main */}
         <div className="p-4 w-full flex justify-center">
           <div className="max-w-md w-full bg-white shadow-xl rounded-2xl p-6 space-y-4">
 
-            {/* Progress Info */}
-            <p className="text-sm text-gray-500 text-right">
+            {/* Progress Bar */}
+            <p className="text-sm text-[#B0B0B0] text-right">
               Scenario {current + 1} of {scenarios.length}
             </p>
-            <div className="h-2 w-full bg-gray-200 rounded-full overflow-hidden">
+            <div className="h-2 w-full bg-[#B0B0B0] rounded-full overflow-hidden">
               <div
-                className="h-full bg-blue-600 transition-all duration-300"
+                className="h-full bg-[#4A90E2] transition-all duration-300"
                 style={{ width: `${((current + 1) / scenarios.length) * 100}%` }}
               />
             </div>
 
-            {/* Scenario Prompt */}
-            <h2 className="text-lg font-semibold text-gray-800 whitespace-pre-line">
+            {/* Scenario */}
+            <h2 className="text-lg font-semibold text-[#2F3A48] whitespace-pre-line">
               {scenario.message}
             </h2>
 
-            {/* Answer Options */}
+            {/* Options */}
             <div className="space-y-2">
               {scenario.options.map((option, index) => {
                 const isSelected = selectedIndex === index;
                 const isCorrect = option.correct;
 
+                const bgColor = isSelected
+                  ? isCorrect
+                    ? 'bg-[#4F9F6E]' // Forest Green
+                    : 'bg-[#FF6F61]' // Muted Coral
+                  : 'bg-white hover:bg-[#f9f9f9]';
+
                 return (
                   <button
                     key={index}
                     onClick={() => handleSelect(index)}
-                    className={`w-full text-left border rounded-xl p-4 shadow-sm transition ${
-                      isSelected
-                        ? isCorrect
-                          ? "bg-green-100"
-                          : "bg-red-100"
-                        : "bg-white hover:bg-gray-50"
-                    }`}
+                    className={`w-full text-left border border-[#B0B0B0] rounded-xl p-4 shadow-sm transition ${bgColor}`}
                   >
-                    <span className="block font-medium text-gray-800">{option.text}</span>
+                    <span className="block font-medium text-[#2F3A48]">{option.text}</span>
                     {isSelected && (
                       <>
-                        <p className="text-sm mt-2 text-gray-700">{option.feedback}</p>
+                        <p className="text-sm mt-2 text-[#2F3A48]">{option.feedback}</p>
                         {!isCorrect && option.recommended && (
-                          <p className="text-sm mt-2 italic text-blue-800">
+                          <p className="text-sm mt-2 italic text-[#4A90E2]">
                             <strong>Recommended response:</strong> {option.recommended}
                           </p>
                         )}
@@ -89,22 +92,22 @@ export default function Home() {
               })}
             </div>
 
-            {/* Navigation Buttons */}
+            {/* Navigation */}
             <div className="flex justify-between gap-4 mt-4">
               <button
                 onClick={handleBack}
                 disabled={current === 0}
-                className={`w-1/2 py-2 px-4 rounded-md transition ${
+                className={`w-1/2 py-2 px-4 rounded-md transition font-medium ${
                   current === 0
-                    ? "bg-gray-300 text-gray-500 cursor-not-allowed"
-                    : "bg-gray-200 hover:bg-gray-300 text-gray-800"
+                    ? 'bg-[#B0B0B0] text-white cursor-not-allowed'
+                    : 'bg-white border border-[#B0B0B0] hover:bg-[#F0E5D8] text-[#2F3A48]'
                 }`}
               >
                 Back
               </button>
               <button
                 onClick={handleNext}
-                className="w-1/2 bg-blue-600 text-white py-2 px-4 rounded-md hover:bg-blue-700 transition"
+                className="w-1/2 bg-[#4A90E2] text-white py-2 px-4 rounded-md hover:bg-[#3C7BCC] transition font-medium"
               >
                 Next
               </button>
