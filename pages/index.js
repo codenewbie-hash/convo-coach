@@ -65,10 +65,10 @@ export default function Home() {
                 const isCorrect = option.correct;
 
                 const bgColor = isSelected
-                  ? isCorrect
-                    ? 'bg-[#4F9F6E]' // Forest Green
-                    : 'bg-[#FF6F61]' // Muted Coral
-                  : 'bg-white hover:bg-[#f9f9f9]';
+  ? isCorrect
+    ? 'bg-green-100'
+    : 'bg-red-100'
+  : 'bg-white hover:bg-[#f9f9f9]';
 
                 return (
                   <button
@@ -117,4 +117,3 @@ export default function Home() {
       </div>
     )
   );
-}
