@@ -1,147 +1,132 @@
 export const scenarios = [
   {
-    id: 1,
-    message: "Your partner says: 'I feel like you're not emotionally present.'\nHow do you typically respond?",
-    options: [
+      id: 1,
+      message: "I feel like youre not emotionally present.",
+      options: [
       {
-        text: "I'm literally here, aren't I?",
-        correct: false,
-        feedback: "This response likely comes from defensiveness or feeling unfairly judged. You may feel like your effort is being dismissed. But instead of clarifying technically, try focusing on emotional presence. Your partner isn’t pointing out your location — they’re expressing a need for connection.",
-        recommended: "I'm sorry you feel that way. Can we talk about what's been coming up for you?"
+          text: "I'm literally here, aren't I?",
+          correct: false,
+          feedback: `This response is rooted in <strong><strong><strong>technical thinking</strong></strong></strong> rather than emotional awareness. It shows a confusion between <strong>physical presence and <strong><strong>emotional presence</strong></strong></strong> — two very different things. While you may feel like you’re showing up, your partner likely needs you to tune into their <strong>feelings, not just be in the room</strong>. A better move would be to pause, get <strong><strong>curious</strong></strong>, and ask what <strong><strong><strong>emotional presence</strong></strong></strong> looks like to them.`
       },
       {
-        text: "I'm sorry you're feeling that way. Can we talk about it more?",
-        correct: true,
-        feedback: "Great response — it shows empathy, openness, and a willingness to understand rather than defend. It helps your partner feel heard and safe."
+          text: "I'm sorry you're feeling that way. Can we talk about it more?",
+          correct: true,
+          feedback: `This is a <strong>solid, <strong><strong>emotionally mature</strong></strong> response</strong>. You’re <strong><strong>acknowledging their experience</strong></strong> <strong><strong><strong>without defensiveness</strong></strong></strong> and inviting connection instead of avoiding it. This kind of <strong>openness</strong> <strong><strong><strong>builds safety</strong></strong></strong> and communicates that you care about their <strong><strong>internal world</strong></strong>, not just your actions.`
       },
       {
-        text: "Here we go again...",
-        correct: false,
-        feedback: "This likely reflects emotional exhaustion or a tendency to shut down when faced with relational tension. You might be feeling overwhelmed and unsure how to respond productively. But sarcasm erodes trust. Instead, take a breath and try to stay engaged — even gently saying you're not sure what to say yet is better.",
-        recommended: "I'm sorry you feel that way. Can we talk about what's been coming up for you?"
+          text: "Here we go again...",
+          correct: false,
+          feedback: `<strong>Sarcasm</strong> is a form of <strong><strong><strong>emotional armor</strong></strong></strong> — it often shows up when someone feels <strong>cornered, helpless, or emotionally drained</strong>. But in moments of vulnerability, <strong>sarcasm</strong> sends the message that you’re <strong><strong><strong>not emotionally available</strong></strong></strong>. It’s okay to feel overwhelmed — just say it <strong>plainly and with care</strong> instead of <strong>deflecting</strong>.`
       },
       {
-        text: "What exactly do you want from me?",
-        correct: false,
-        feedback: "This response usually stems from feeling pressured or incapable. It’s a protective reaction to a perceived emotional demand. But this tone can feel cold or impatient. Try staying with your partner’s emotional state instead of jumping to problem-solving or frustration.",
-        recommended: "I'm sorry you feel that way. Can we talk about what's been coming up for you?"
+          text: "What exactly do you want from me?",
+          correct: false,
+          feedback: `This response may come from <strong><strong><strong>frustration or confusion</strong></strong></strong>, but it can sound <strong><strong><strong>cold and defensive</strong></strong></strong>. It shifts the <strong><strong>emotional labor</strong></strong> back onto your partner to justify their need. Instead, try something like: <strong>“I want to be there for you, but I’m not totally sure how. Can you help me understand?”</strong>`
       }
-    ]
+      ]
   },
   {
-    id: 2,
-    message: "Your partner says: 'I just feel so drained lately.'\nHow do you typically respond?",
-    options: [
+      id: 2,
+      message: "I just feel so drained lately.",
+      options: [
       {
-        text: "Want me to leave you alone?",
-        correct: false,
-        feedback: "This may come from discomfort with emotions or a fear of saying the wrong thing. You might be trying to give space, but it can feel like emotional withdrawal. Try asking what kind of support they need instead of assuming.",
-        recommended: "Do you want to talk about it, or would you rather just relax together for a bit?"
+          text: "Want me to leave you alone?",
+          correct: false,
+          feedback: `This response might seem considerate on the surface, but it can feel like <strong>emotional abandonment</strong>. It assumes your partner wants distance instead of asking. If you're unsure, it's better to <strong>offer presence with choice</strong> — not pull away prematurely.`
       },
       {
-        text: "Do you want to talk about it, or would you rather just relax together for a bit?",
-        correct: true,
-        feedback: "Perfect. You’re showing care, offering presence, and giving them agency. It’s supportive without pressure, which builds emotional safety."
+          text: "Do you want to talk about it, or would you rather just relax together for a bit?",
+          correct: true,
+          feedback: `Excellent response. You're offering <strong>care while giving your partner control</strong> over what kind of support they want. That balance of presence and flexibility <strong>builds emotional safety</strong>.`
       },
       {
-        text: "You're always tired. Maybe you should start working out again?",
-        correct: false,
-        feedback: "This likely comes from a desire to fix things quickly — or discomfort with emotional heaviness. But it risks sounding critical. What your partner likely needs is not advice, but compassion and co-regulation.",
-        recommended: "Do you want to talk about it, or would you rather just relax together for a bit?"
+          text: "You're always tired. Maybe you should start working out again?",
+          correct: false,
+          feedback: `While you might think you’re being helpful, this <strong>comes across as critical</strong>. It shifts the moment from empathy to judgment. Your partner likely needs <strong>compassion more than advice</strong> when they’re feeling low.`
       },
       {
-        text: "Well, you're not the only one who's had a rough day.",
-        correct: false,
-        feedback: "This response reflects comparison — a subconscious bid to have your own pain seen. But it tends to invalidate your partner’s experience. Try staying in their world first. You can share your day too, just not in a way that shuts them down.",
-        recommended: "Do you want to talk about it, or would you rather just relax together for a bit?"
+          text: "Well, you're not the only one who's had a rough day.",
+          correct: false,
+          feedback: `This response reflects a need to have your own stress acknowledged, which is valid. But <strong>bringing it up in this way can feel like you're dismissing their experience</strong>. Try listening fully before expressing your own challenges.`
       }
-    ]
+      ]
   },
   {
-    id: 3,
-    message: "Your partner says: 'Sometimes I wonder if you’re actually happy with me.'\nHow do you typically respond?",
-    options: [
+      id: 3,
+      message: "Sometimes I wonder if youre actually happy with me.",
+      options: [
       {
-        text: "That’s your issue, not mine.",
-        correct: false,
-        feedback: "This often comes from feeling blindsided or triggered by self-doubt. You might feel accused. But deflecting responsibility makes your partner feel even more insecure. Try inviting understanding rather than protecting your ego.",
-        recommended: "I'm really sorry you're feeling that way. What’s been coming up for you lately that’s making you wonder that?"
+          text: "That’s your issue, not mine.",
+          correct: false,
+          feedback: `This is a shutdown response. It puts a wall between you and your partner when they’re trying to open up. Even if the question stings, it's an opportunity to connect — not deflect.`
       },
       {
-        text: "I hate that you're feeling that way. I am happy — what’s making you feel unsure?",
-        correct: true,
-        feedback: "This response is emotionally available and curious. You're showing care while offering reassurance and leaving space for a deeper conversation."
+          text: "I hate that you're feeling that way. I am happy — what’s making you feel unsure?",
+          correct: true,
+          feedback: `A strong response. You’re <strong>showing concern and inviting a deeper conversation</strong>. This kind of openness <strong>helps your partner feel secure and seen</strong>.`
       },
       {
-        text: "Here we go again. You overthink everything.",
-        correct: false,
-        feedback: "This comes from impatience or fear of emotional entanglement. You might feel unequipped to handle emotional depth. But labeling your partner as ‘overthinking’ minimizes their experience and builds resentment.",
-        recommended: "I'm really sorry you're feeling that way. What’s been coming up for you lately that’s making you wonder that?"
+          text: "Here we go again. You overthink everything.",
+          correct: false,
+          feedback: `This likely comes from <strong>emotional fatigue or defensiveness</strong>. Labeling your partner as someone who overthinks not only invalidates them — it discourages future vulnerability. Stay with their emotional reality, even if it makes you uncomfortable.`
       },
       {
-        text: "Maybe you're not happy with me either.",
-        correct: false,
-        feedback: "This likely stems from defensiveness and anxiety — a need to shift the vulnerability off of you. But it redirects the moment away from connection and into a blame game. Instead, stay anchored in empathy.",
-        recommended: "I'm really sorry you're feeling that way. What’s been coming up for you lately that’s making you wonder that?"
+          text: "Maybe you're not happy with me either.",
+          correct: false,
+          feedback: `This response <strong>flips the vulnerability back onto them</strong> — a classic deflection move. It can make your partner feel even more unsafe or unsteady. Try to focus on their emotions before redirecting.`
       }
-    ]
+      ]
   },
   {
-    id: 4,
-    message: "Your partner says: 'You're not really listening to me.'\nHow do you typically respond?",
-    options: [
+      id: 4,
+      message: "Youre not really listening to me.",
+      options: [
       {
-        text: "I literally repeated what you just said.",
-        correct: false,
-        feedback: "You may be trying to prove you're doing the right thing, but this response misses the emotional signal. Your partner isn’t asking for proof — they’re seeking felt understanding. Repeating words isn’t the same as being attuned.",
-        recommended: "You’re right. I was distracted — I want to try again and be fully here now."
+          text: "I literally repeated what you just said.",
+          correct: false,
+          feedback: `This response is <strong>about proving a point, not connecting</strong>. It reduces listening to a performance rather than an <strong>emotional exchange</strong>. Your partner is likely asking for your full presence, not a playback.`
       },
       {
-        text: "You’re right. I was distracted — I want to try again and be fully here now.",
-        correct: true,
-        feedback: "Strong answer. It shows self-awareness, accountability, and a desire to repair — all signs of emotional maturity."
+          text: "You’re right. I was distracted — I want to try again and be fully here now.",
+          correct: true,
+          feedback: `Excellent repair move. You <strong>acknowledge the slip and express desire to do better</strong> — that builds trust. Being able to admit distraction and re-engage is a relationship strength.`
       },
       {
-        text: "Can you stop saying that? I always listen.",
-        correct: false,
-        feedback: "This reflects frustration and a need to feel seen as competent — but it invalidates your partner’s experience. Instead, try pausing your defensiveness and moving toward curiosity.",
-        recommended: "You’re right. I was distracted — I want to try again and be fully here now."
+          text: "Can you stop saying that? I always listen.",
+          correct: false,
+          feedback: `This comes from a need to be seen as competent, but it overrides your partner's emotional reality. If they don’t feel heard, insisting that you are listening won’t help. Validation is more powerful than explanation.`
       },
       {
-        text: "What do you want from me exactly?",
-        correct: false,
-        feedback: "This often comes from emotional fatigue or pressure. You might feel like you’re not enough. But this phrasing feels hostile. Try shifting from performance to presence.",
-        recommended: "You’re right. I was distracted — I want to try again and be fully here now."
+          text: "What do you want from me exactly?",
+          correct: false,
+          feedback: `This likely comes from emotional fatigue or frustration. It implies your partner is too demanding, which shuts down communication. Instead, <strong>invite them to clarify what they need emotionally</strong> — not just logistically.`
       }
-    ]
+      ]
   },
   {
-    id: 5,
-    message: "Your partner says: 'You don’t really get what I’m going through.'\nHow do you typically respond?",
-    options: [
+      id: 5,
+      message: "You dont really get what Im going through.",
+      options: [
       {
-        text: "That’s not fair. I’m trying my best.",
-        correct: false,
-        feedback: "This likely stems from a need to be recognized for your effort — totally valid. But leading with defense can make your partner feel unheard. Try acknowledging their pain first, then share your intention.",
-        recommended: "I’m sorry it feels that way. Help me understand better — I really want to."
+          text: "That’s not fair. I’m trying my best.",
+          correct: false,
+          feedback: `This reflects a <strong>desire to be seen and appreciated</strong> — which is fair. But when it comes first, it can sound defensive and invalidate their pain. Try <strong>affirming their feeling first</strong>, then talk about your effort.`
       },
       {
-        text: "I’m sorry it feels that way. Help me understand better — I really want to.",
-        correct: true,
-        feedback: "Beautiful. You’re taking responsibility for the emotional disconnect without getting reactive. That kind of presence builds safety and trust."
+          text: "I’m sorry it feels that way. Help me understand better — I really want to.",
+          correct: true,
+          feedback: `Excellent response. You express willingness to understand and take <strong>emotional responsibility</strong>. This kind of openness can <strong>turn disconnection into closeness</strong>.`
       },
       {
-        text: "You’re exaggerating. I get it more than you think.",
-        correct: false,
-        feedback: "This response often comes from a need to protect your ego or effort. But it can feel dismissive. Instead of reassuring, lead with curiosity and compassion.",
-        recommended: "I’m sorry it feels that way. Help me understand better — I really want to."
+          text: "You’re exaggerating. I get it more than you think.",
+          correct: false,
+          feedback: `This might feel like you’re offering reassurance, but it <strong>comes off as dismissive</strong>. If your partner says they don’t feel understood, telling them they’re wrong makes things worse. Start with curiosity instead.`
       },
       {
-        text: "You always say that. Maybe you're just hard to understand.",
-        correct: false,
-        feedback: "This response may come from frustration or burnout. But it puts blame on your partner rather than co-owning the gap. It's more powerful to move toward understanding, not away from it.",
-        recommended: "I’m sorry it feels that way. Help me understand better — I really want to."
+          text: "You always say that. Maybe you're just hard to understand.",
+          correct: false,
+          feedback: `This reflects <strong>emotional exhaustion</strong> — but also deflects blame. It puts the issue back on your partner and avoids <strong>shared responsibility</strong>. Stay in empathy mode before you evaluate their expectations.`
       }
-    ]
+      ]
   }
 ];
