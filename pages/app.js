@@ -37,8 +37,16 @@ export default function Home() {
           <title>Convo Coach</title>
         </Head>
 
+        {/* Thin top branding banner */}
+        <div className="w-full flex justify-center bg-white border-b border-[#B0B0B0] py-1 shadow-sm">
+          <div className="flex items-center gap-2 text-sm text-[#4A90E2]">
+            <img src="/icon-180.png" alt="App Icon" className="w-5 h-5" />
+            <span className="font-medium">Convo Coach</span>
+          </div>
+        </div>
+
         {/* Main Content */}
-        <div className="p-4 w-full flex justify-center pt-6 pb-16">
+        <div className="p-4 w-full flex justify-center pb-16">
           <div className="max-w-md w-full bg-white shadow-xl rounded-2xl p-6 space-y-4">
 
             {/* Progress Bar */}
@@ -113,14 +121,6 @@ export default function Home() {
             </div>
           </div>
         </div>
-
-        {/* Sticky footer branding */}
-        <footer className="fixed bottom-2 w-full flex justify-center items-center">
-          <div className="flex items-center gap-2 text-sm text-[#B0B0B0] bg-white bg-opacity-80 px-3 py-1 rounded-full shadow-sm">
-            <img src="/icon-180.png" alt="App Icon" className="w-5 h-5" />
-            <span>Convo Coach</span>
-          </div>
-        </footer>
       </div>
     )
   );
