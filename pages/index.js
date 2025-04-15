@@ -54,9 +54,14 @@ export default function Home() {
             </div>
 
             {/* Scenario */}
-            <h2 className="text-lg font-semibold text-[#2F3A48] whitespace-pre-line">
-              {scenario.message}
-            </h2>
+            <div className="space-y-2">
+  <p className="text-sm text-[#4A90E2] font-medium">💬 Partner says:</p>
+  <p className="italic text-lg text-[#2F3A48] leading-snug">
+    “{scenario.message.split('\n')[0]}”
+  </p>
+  <p className="text-sm text-[#2F3A48] mt-1">How do you typically respond?</p>
+</div>
+
 
             {/* Options */}
             <div className="space-y-2">
@@ -79,7 +84,11 @@ export default function Home() {
                     <span className="block font-medium text-[#2F3A48]">{option.text}</span>
                     {isSelected && (
                       <>
-                        <p className="text-sm mt-2 text-[#2F3A48]">{option.feedback}</p>
+                        <p
+  className="text-sm mt-2 text-[#2F3A48]"
+  dangerouslySetInnerHTML={{ __html: option.feedback }}
+></p>
+
                         {!isCorrect && option.recommended && (
                           <p className="text-sm mt-4 bg-[#F7F8FA] border border-[#B0B0B0] p-3 rounded-md text-[#1E3A8A]">
                             <strong>Recommended response:</strong> {option.recommended}
