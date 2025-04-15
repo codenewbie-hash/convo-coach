@@ -1,16 +1,15 @@
-import { useEffect } from 'react'; // ✅ Add this if missing
-import '@/styles/globals.css';     // or whatever else is at the top
+// pages/_app.js
+import '@/styles/globals.css';
+import Head from 'next/head';
 
-function MyApp({ Component, pageProps }) {
-  useEffect(() => {
-    if ('serviceWorker' in navigator) {
-      navigator.serviceWorker.ready.then(() => {
-        console.log("✅ Service Worker is ready!");
-      });
-    }
-  }, []);
-
-  return <Component {...pageProps} />;
+export default function App({ Component, pageProps }) {
+  return (
+    <>
+      <Head>
+        <title>Convo Coach</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+      </Head>
+      <Component {...pageProps} />
+    </>
+  );
 }
-
-export default MyApp;
